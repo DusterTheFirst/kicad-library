@@ -13,18 +13,18 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - run: ${KLC_UTILS_PATH}/pcb/check_kicad_mod.py ./modules/*.pretty/*
+      - run: ${KLC_UTILS_PATH}/pcb/check_kicad_mod.py -vv -i F9.3 ./modules/*.pretty/*
   symbols:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - run: ${KLC_UTILS_PATH}/schlib/checklib.py ./library/*.lib
+      - run: ${KLC_UTILS_PATH}/schlib/checklib.py -vv ./library/*.lib
   three-d-models:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - run: ${KLC_UTILS_PATH}/pcb/check_3d_coverage.py -r ./modules --usepackages3D
+      - run: ${KLC_UTILS_PATH}/pcb/check_3d_coverage.py -v -r ./modules --usepackages3D
