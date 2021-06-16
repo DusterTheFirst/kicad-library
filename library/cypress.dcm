@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP FM25V20A-PG
+D 2-Mbit (256 K × 8) Serial (SPI) F-RAM
+K FRAM Storage Memory FRAM DIP8 SPI Serial 2Mb
+F https://media.digikey.com/pdf/Data%20Sheets/Cypress%20PDFs/FM25V20A_PDIP_RevC_5-15-19.pdf
+$ENDCMP
+#
+#End Doc Library
