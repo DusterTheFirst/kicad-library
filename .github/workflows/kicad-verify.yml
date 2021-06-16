@@ -1,0 +1,30 @@
+# TODO:
+
+name: Verify KiCAD Files
+on: push
+
+env:
+  KLC_UTILS_PATH: .github/kicad-library-utils/
+
+jobs:
+  footprints:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - run: ${KLC_UTILS_PATH}/pcb/check_kicad_mod.py ./modules/*.pretty/*
+  symbols:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - run: ${KLC_UTILS_PATH}/schlib/checklib.py ./library/*.lib
+  three-d-models:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - run: ${KLC_UTILS_PATH}/pcb/check_3d_coverage.py -r ./modules --usepackages3D
