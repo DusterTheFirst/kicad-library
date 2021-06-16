@@ -1,0 +1,4 @@
+[submodule ".github/kicad-library-utils"]
+	path = .github/kicad-library-utils
+	url = https://gitlab.com/DusterTheFirst/kicad-library-utils.git/
+	branch = v5-bugfixes
